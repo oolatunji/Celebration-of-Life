@@ -8,3 +8,13 @@ C:\Users\OLATUNJI\Documents\projects\KioskApp\CelebrationOfLife.Web\CelebrationO
 C:\Users\OLATUNJI\Documents\projects\KioskApp\CelebrationOfLife.Web\CelebrationOfLife.Library\obj\Debug\CelebrationOfLife.Library.csprojResolveAssemblyReference.cache
 C:\Users\OLATUNJI\Documents\projects\KioskApp\CelebrationOfLife.Web\CelebrationOfLife.Library\obj\Debug\CelebrationOfLife.Library.dll
 C:\Users\OLATUNJI\Documents\projects\KioskApp\CelebrationOfLife.Web\CelebrationOfLife.Library\obj\Debug\CelebrationOfLife.Library.pdb
+C:\Users\OLATUNJI\Documents\projects\Celebration-of-Life\CelebrationOfLife.Library\bin\Debug\CelebrationOfLife.Library.dll.config
+C:\Users\OLATUNJI\Documents\projects\Celebration-of-Life\CelebrationOfLife.Library\bin\Debug\CelebrationOfLife.Library.dll
+C:\Users\OLATUNJI\Documents\projects\Celebration-of-Life\CelebrationOfLife.Library\bin\Debug\CelebrationOfLife.Library.pdb
+C:\Users\OLATUNJI\Documents\projects\Celebration-of-Life\CelebrationOfLife.Library\bin\Debug\EntityFramework.dll
+C:\Users\OLATUNJI\Documents\projects\Celebration-of-Life\CelebrationOfLife.Library\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\OLATUNJI\Documents\projects\Celebration-of-Life\CelebrationOfLife.Library\bin\Debug\EntityFramework.xml
+C:\Users\OLATUNJI\Documents\projects\Celebration-of-Life\CelebrationOfLife.Library\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\OLATUNJI\Documents\projects\Celebration-of-Life\CelebrationOfLife.Library\obj\Debug\CelebrationOfLife.Library.csprojResolveAssemblyReference.cache
+C:\Users\OLATUNJI\Documents\projects\Celebration-of-Life\CelebrationOfLife.Library\obj\Debug\CelebrationOfLife.Library.dll
+C:\Users\OLATUNJI\Documents\projects\Celebration-of-Life\CelebrationOfLife.Library\obj\Debug\CelebrationOfLife.Library.pdb

@@ -1,8 +1,36 @@
-﻿
-@{
-    ViewBag.Title = "ViewContentCategory";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿@Scripts.Render("~/bundles/viewcontentcategory")
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header panel-primary" style="color:navy">Category Management</h1>
+    </div>
+</div>
+<div class="row" ng-app="mainApp">
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                User List
+            </div>
+            <div class="panel-body" ng-controller="categoryController">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table id="categoryList" class="cell-border" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Name</th>
+                                </tr>
+                            </thead>
 
-<h2>ViewContentCategory</h2>
-
+                            <tfoot>
+                                <tr>
+                                    <th></th>
+                                    <th>Name</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

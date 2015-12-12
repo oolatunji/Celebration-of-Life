@@ -38,6 +38,18 @@ namespace CelebrationOfLife.Web
             bundles.Add(new ScriptBundle("~/bundles/viewuser").Include(
                       "~/Scripts/user/viewuser.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/createcontentcategory").Include(
+                      "~/Scripts/webcontentcategory/createcategory.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/viewcontentcategory").Include(
+                      "~/Scripts/webcontentcategory/viewcategory.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/createcontent").Include(
+                      "~/Scripts/webcontentcategory/createcontent.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/viewcontent").Include(
+                      "~/Scripts/webcontentcategory/viewcontent.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                      "~/Content/admin/bootstrap.min.css",
                      "~/Content/admin/metisMenu.min.css",

@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\CategoryDL.cs" />
     <Compile Include="Data\UserDL.cs" />
     <Compile Include="Model\EntityFramework\Category.cs">
       <DependentUpon>ColDB.tt</DependentUpon>
@@ -81,6 +82,7 @@
       <DependentUpon>ColDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Utility\PasswordHash.cs" />
+    <Compile Include="Process\CategoryPL.cs" />
     <Compile Include="Process\UserPL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
