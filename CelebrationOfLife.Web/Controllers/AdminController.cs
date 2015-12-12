@@ -20,5 +20,35 @@ namespace CelebrationOfLife.Web.Controllers
             ViewBag.Title = "Create User";
             return View();
         }
+
+        public ActionResult ViewUser()
+        {
+            ViewBag.Title = "View User";
+            return View();
+        }
+
+        public ActionResult CreateContentCategory()
+        {
+            ViewBag.Title = "Create Web Content Category";
+            return View();
+        }
+
+        public ActionResult ViewContentCategory()
+        {
+            ViewBag.Title = "View Web Content Category";
+            return View();
+        }
+
+        public ActionResult CreateWebContent()
+        {
+            ViewBag.Title = "Create Web Content";
+            return View();
+        }
+
+        public ActionResult ViewWebContent()
+        {
+            ViewBag.Title = "View Web Content";
+            return View();
+        }
     }
 }

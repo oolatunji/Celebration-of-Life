@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CelebrationOfLife.Web", "CelebrationOfLife.Web\CelebrationOfLife.Web.csproj", "{61C45D1F-F34D-4C72-A739-79C974F806F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CelebrationOfLife.Library", "CelebrationOfLife.Library\CelebrationOfLife.Library.csproj", "{B3C0A8FE-7E99-495C-8A4C-C35877CFAEE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61C45D1F-F34D-4C72-A739-79C974F806F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61C45D1F-F34D-4C72-A739-79C974F806F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61C45D1F-F34D-4C72-A739-79C974F806F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61C45D1F-F34D-4C72-A739-79C974F806F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3C0A8FE-7E99-495C-8A4C-C35877CFAEE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3C0A8FE-7E99-495C-8A4C-C35877CFAEE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3C0A8FE-7E99-495C-8A4C-C35877CFAEE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3C0A8FE-7E99-495C-8A4C-C35877CFAEE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

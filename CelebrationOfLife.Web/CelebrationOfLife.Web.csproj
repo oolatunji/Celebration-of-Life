@@ -189,6 +189,15 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="images\ack.png" />
+    <Content Include="images\copy_csv_xls_pdf.swf" />
+    <Content Include="images\details_close.png" />
+    <Content Include="images\details_open.png" />
+    <Content Include="images\edit_control.png" />
+    <Content Include="images\edit_control_1.png" />
+    <Content Include="images\footer.jpg" />
+    <Content Include="images\header.jpg" />
+    <Content Include="images\issue.png" />
     <Content Include="Scripts\admin\bootstrap.js" />
     <Content Include="Scripts\admin\bootstrap.min.js" />
     <Content Include="Scripts\common\factory.js" />
@@ -1018,6 +1027,7 @@
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
     <Content Include="Scripts\user\adduser.js" />
+    <Content Include="Scripts\user\viewuser.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1047,6 +1057,11 @@
     <Content Include="Scripts\angular\angular.min.js.map" />
     <Content Include="Views\Admin\Dashboard.cshtml" />
     <Content Include="Views\Admin\CreateUser.cshtml" />
+    <Content Include="Views\Admin\ViewUser.cshtml" />
+    <Content Include="Views\Admin\CreateContentCategory.cshtml" />
+    <Content Include="Views\Admin\ViewContentCategory.cshtml" />
+    <Content Include="Views\Admin\CreateWebContent.cshtml" />
+    <Content Include="Views\Admin\ViewWebContent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CelebrationOfLife.Library\CelebrationOfLife.Library.csproj">

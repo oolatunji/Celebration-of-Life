@@ -35,6 +35,9 @@ namespace CelebrationOfLife.Web
             bundles.Add(new ScriptBundle("~/bundles/adduser").Include(
                       "~/Scripts/user/adduser.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/viewuser").Include(
+                      "~/Scripts/user/viewuser.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                      "~/Content/admin/bootstrap.min.css",
                      "~/Content/admin/metisMenu.min.css",
