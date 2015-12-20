@@ -4,13 +4,22 @@ mainApp.controller('categoryController', ['$scope', '$http', function ($scope, $
 
     $scope.category = {};
 
+    $scope.selectedCategory = '';
+
     $scope.category = {
-        Name: ''
+        Name: '',
+        Type: ''
     };
 
+    $scope.categorytype = [
+            { name: 'Text', id: 'Text' },
+            { name: 'Image', id: 'Image' }
+    ];
+
     $scope.save = function () {
-        if (_.isEmpty($scope.category.Name)) {
-            displayMessage("error", 'Category name is required', "Category Management");
+        $scope.category.Type = $scope.selectedCategory.id;
+        if (_.isEmpty($scope.category.Name) || _.isEmpty($scope.category.Type)) {
+            displayMessage("error", 'Category name and type are required', "Category Management");
         } else {
             factory.colService.saveObject($scope.category, $http, 'api/CategoryAPI/SaveCategory').then(function (response) {
                 displayMessage("success", response, "Category Management");
@@ -21,8 +30,12 @@ mainApp.controller('categoryController', ['$scope', '$http', function ($scope, $
     };
 
     $scope.reset = function () {
+
+        $scope.selectedCategory = '';
+
         $scope.category = {
-            Name: ''
+            Name: '',
+            Type: ''
         };
     }
 

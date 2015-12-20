@@ -17,6 +17,7 @@ namespace CelebrationOfLife.Library.Model.EntityFramework
         public int ID { get; set; }
         public int CategoryID { get; set; }
         public byte[] Image { get; set; }
+        public string BriefDescription { get; set; }
     
         public virtual Category Category { get; set; }
     }

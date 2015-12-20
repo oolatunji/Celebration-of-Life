@@ -4,13 +4,14 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ColDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ColDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="CategoryGallery">
           <Key>
@@ -19,6 +20,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CategoryID" Type="int" Nullable="false" />
           <Property Name="Image" Type="varbinary(max)" Nullable="false" />
+          <Property Name="BriefDescription" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="CategoryText">
           <Key>
@@ -76,19 +78,33 @@
             <End Role="CategoryText" EntitySet="CategoryText" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ColDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ColDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="ColDBModel.Category" />
+          <EntitySet Name="CategoryGalleries" EntityType="ColDBModel.CategoryGallery" />
+          <EntitySet Name="CategoryTexts" EntityType="ColDBModel.CategoryText" />
+          <EntitySet Name="Users" EntityType="ColDBModel.User" />
+          <AssociationSet Name="FK_CategoryGallery_Category" Association="ColDBModel.FK_CategoryGallery_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="CategoryGallery" EntitySet="CategoryGalleries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CategoryText_Category" Association="ColDBModel.FK_CategoryText_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="CategoryText" EntitySet="CategoryTexts" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="CategoryGalleries" Relationship="Self.FK_CategoryGallery_Category" FromRole="Category" ToRole="CategoryGallery" />
-          <NavigationProperty Name="CategoryText" Relationship="Self.FK_CategoryText_Category" FromRole="Category" ToRole="CategoryText" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CategoryGalleries" Relationship="ColDBModel.FK_CategoryGallery_Category" FromRole="Category" ToRole="CategoryGallery" />
+          <NavigationProperty Name="CategoryText" Relationship="ColDBModel.FK_CategoryText_Category" FromRole="Category" ToRole="CategoryText" />
         </EntityType>
         <EntityType Name="CategoryGallery">
           <Key>
@@ -96,31 +112,32 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CategoryID" Type="Int32" Nullable="false" />
-          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-          <NavigationProperty Name="Category" Relationship="Self.FK_CategoryGallery_Category" FromRole="CategoryGallery" ToRole="Category" />
+          <Property Name="Image" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="BriefDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Category" Relationship="ColDBModel.FK_CategoryGallery_Category" FromRole="CategoryGallery" ToRole="Category" />
         </EntityType>
         <EntityType Name="CategoryText">
           <Key>
             <PropertyRef Name="CategoryID" />
           </Key>
           <Property Name="CategoryID" Type="Int32" Nullable="false" />
-          <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Category" Relationship="Self.FK_CategoryText_Category" FromRole="CategoryText" ToRole="Category" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Category" Relationship="ColDBModel.FK_CategoryText_Category" FromRole="CategoryText" ToRole="Category" />
         </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Lastname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Othernames" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Username" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lastname" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Othernames" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_CategoryGallery_Category">
-          <End Role="Category" Type="Self.Category" Multiplicity="1" />
-          <End Role="CategoryGallery" Type="Self.CategoryGallery" Multiplicity="*" />
+          <End Type="ColDBModel.Category" Role="Category" Multiplicity="1" />
+          <End Type="ColDBModel.CategoryGallery" Role="CategoryGallery" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Category">
               <PropertyRef Name="ID" />
@@ -131,8 +148,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CategoryText_Category">
-          <End Role="Category" Type="Self.Category" Multiplicity="1" />
-          <End Role="CategoryText" Type="Self.CategoryText" Multiplicity="0..1" />
+          <End Type="ColDBModel.Category" Role="Category" Multiplicity="1" />
+          <End Type="ColDBModel.CategoryText" Role="CategoryText" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Category">
               <PropertyRef Name="ID" />
@@ -142,21 +159,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ColDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Categories" EntityType="Self.Category" />
-          <EntitySet Name="CategoryGalleries" EntityType="Self.CategoryGallery" />
-          <EntitySet Name="CategoryTexts" EntityType="Self.CategoryText" />
-          <EntitySet Name="Users" EntityType="Self.User" />
-          <AssociationSet Name="FK_CategoryGallery_Category" Association="Self.FK_CategoryGallery_Category">
-            <End Role="Category" EntitySet="Categories" />
-            <End Role="CategoryGallery" EntitySet="CategoryGalleries" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CategoryText_Category" Association="Self.FK_CategoryText_Category">
-            <End Role="Category" EntitySet="Categories" />
-            <End Role="CategoryText" EntitySet="CategoryTexts" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -165,37 +168,39 @@
           <EntitySetMapping Name="Categories">
             <EntityTypeMapping TypeName="ColDBModel.Category">
               <MappingFragment StoreEntitySet="Category">
-                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CategoryGalleries">
             <EntityTypeMapping TypeName="ColDBModel.CategoryGallery">
               <MappingFragment StoreEntitySet="CategoryGallery">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="BriefDescription" ColumnName="BriefDescription" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CategoryTexts">
             <EntityTypeMapping TypeName="ColDBModel.CategoryText">
               <MappingFragment StoreEntitySet="CategoryText">
-                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="ColDBModel.User">
               <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
-                <ScalarProperty Name="Othernames" ColumnName="Othernames" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Othernames" ColumnName="Othernames" />
+                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

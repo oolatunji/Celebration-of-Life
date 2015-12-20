@@ -31,13 +31,14 @@ function GetCategories() {
                     "defaultContent": ''
                 },
                 { "data": "Name" },
+                { "data": "Type" },
                 {
                     "data": "ID",
                     "visible": false
                 }
             ],
 
-            "order": [[2, "asc"]],
+            "order": [[1, "asc"]],
 
             "sDom": 'T<"clear">lrtip',
 
@@ -112,6 +113,22 @@ function format(d) {
     table += '<td><input class="form-control" placeholder="Enter Category Name" id="name" value="' + d.Name + '"/></td>';
     table += '</tr>';
     table += '<tr>';
+    table += '<td style="color:navy;width:30%;font-family:Calibri;">Category Type:</td>';
+    table += '<td><select class="form-control" id="type">';
+    table += '<option value="">Select Category Type</option>';
+    if (d.Type == "Text") {
+        table += '<option selected="selected" value="Text">Text</option>';
+        table += '<option value="Image">Image</option>';
+    }
+    else if (d.Type == "Image") {
+        table += '<option value="Text">Text</option>';
+        table += '<option selected="selected" value="Image">Image</option>';
+    } else {
+        table += '<option value="Text">Text</option>';
+        table += '<option value="Image">Image</option>';
+    }
+    table += '</select></td></tr>';
+    table += '<tr>';
     table += '<td style="display:none">ID:</td>';
     table += '<td style="display:none"><input class="form-control" id="id" value="' + d.ID + '"/></td>';
     table += '</tr>';
@@ -126,13 +143,14 @@ function format(d) {
 
 function update() {
     var name = $('#name').val();
+    var type = $('#type').val();
     var id = $('#id').val();
-    var err = customUserValidation(name);
+    var err = customUserValidation(name, type);
     if (err != "") {
         displayMessage("error", 'Error encountered: ' + err, "Category Management");
     } else {
         $("#updateBtn").attr("disabled", "disabled");
-        var data = { ID: id, Name: name };
+        var data = { ID: id, Name: name, Type: type };
         $.ajax({
             url: settingsManager.websiteURL + 'api/CategoryAPI/UpdateCategory',
             type: 'PUT',
@@ -153,13 +171,17 @@ function update() {
     }
 }
 
-function customUserValidation(name) {
+function customUserValidation(name, type) {
     var err = "";
     var validationErr = "";
     var missingFields = "";
     var errCount = 0;
     if (name == "") {
         missingFields += "Category Name";
+        errCount++;
+    }
+    if (type == "") {
+        missingFields += "Category Type";
         errCount++;
     }
 

@@ -7,6 +7,18 @@ tr.shown td.details-control {
     background: url('../images/details_close.png') no-repeat center center;
 }
 
+td.view-control {
+    text-decoration:underline;
+    color:blue;
+    cursor: pointer;
+}
+
+td.modify-control {
+    text-decoration:underline;
+    color:blue;
+    cursor: pointer;
+}
+
 td.edit-control {
     background: url('../images/edit_control_1.png') no-repeat center center;
     cursor: pointer;

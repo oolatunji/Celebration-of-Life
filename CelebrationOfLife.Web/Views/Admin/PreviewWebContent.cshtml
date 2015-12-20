@@ -1,0 +1,46 @@
+﻿@Scripts.Render("~/bundles/previewcontent")
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header panel-primary" style="color:navy">Web Content Management</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                View Web Content
+            </div>
+            <div class="panel-body">
+                <div class="row" id="textCategory">
+                    <div class="col-lg-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Content for: <span id="categoryHeader"></span>
+                            </div>
+                            <div class="panel-body">
+                                <div id="webContent"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="imageCategory">
+                    <div class="col-lg-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Images for: <span id="imageHeader"></span>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group" id="images">
+                                    <div class="col-lg-12" id="potential_images" style="display:flex;flex-direction: row;flex-wrap: wrap;justify-content: center;align-items: center;">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-outline btn-default" onclick="backToList()"><i class="fa fa-angle-double-left"></i> Back to Content List</button>         
+            </div>
+        </div>
+    </div>
+</div>

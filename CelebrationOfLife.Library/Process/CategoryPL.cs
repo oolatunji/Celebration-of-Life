@@ -46,7 +46,7 @@ namespace CelebrationOfLife.Library.Process
                 {
                     CategoryDL.RetrieveCategories().ForEach(category =>
                     {
-                        categories.Add(new { Name = category.Name, ID = category.ID });
+                        categories.Add(new { Name = category.Name, ID = category.ID, Type = category.Type });
                     });
                 }
 

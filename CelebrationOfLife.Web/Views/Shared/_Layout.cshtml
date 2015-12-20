@@ -7,6 +7,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/common")
+    @Scripts.Render("~/bundles/layout")
 </head>
 <body>
     <div id="wrapper">
@@ -24,7 +25,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li>
-                            <a href="~/Login/ChangePassword"><i class="fa fa-pencil fa-fw"></i> Change Password</a>
+                            <a href="~/Admin/ChangePassword"><i class="fa fa-pencil fa-fw"></i> Change Password</a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -79,7 +80,13 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            @Html.ActionLink("API", "Index", "Help", new { area = "" }, null)
+                            <a href="#"><i class="fa fa-cog"></i> Password Management<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="~/Admin/ChangePassword" class="fa fa-plus-square"> Change Password</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
                         </li>
                     </ul>
                 </div>

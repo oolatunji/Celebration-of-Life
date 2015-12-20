@@ -5,12 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="51158dda1f3c497bbc0a4eb0efc2d3fc" Name="Diagram1">
-        <EntityTypeShape EntityType="ColDBModel.Category" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ColDBModel.CategoryGallery" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="ColDBModel.CategoryText" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ColDBModel.User" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="ColDBModel.FK_CategoryGallery_Category" ManuallyRouted="false" />
-        <AssociationConnector Association="ColDBModel.FK_CategoryText_Category" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ColDBModel.Category" Width="1.5" PointX="0.75" PointY="2.25" />
+        <EntityTypeShape EntityType="ColDBModel.CategoryGallery" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="ColDBModel.CategoryText" Width="1.5" PointX="3" PointY="3.75" />
+        <EntityTypeShape EntityType="ColDBModel.User" Width="1.5" PointX="5.75" PointY="0.75" />
+        <AssociationConnector Association="ColDBModel.FK_CategoryGallery_Category" />
+        <AssociationConnector Association="ColDBModel.FK_CategoryText_Category" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

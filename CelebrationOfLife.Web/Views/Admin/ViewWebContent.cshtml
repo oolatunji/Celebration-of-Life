@@ -1,8 +1,40 @@
-﻿
-@{
-    ViewBag.Title = "ViewWebContent";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿@Scripts.Render("~/bundles/viewcontent")
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header panel-primary" style="color:navy">Web Content Management</h1>
+    </div>
+</div>
+<div class="row" ng-app="mainApp">
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Web Content List
+            </div>
+            <div class="panel-body" ng-controller="categoryController">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table id="categoryList" class="cell-border" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                </tr>
+                            </thead>
 
-<h2>ViewWebContent</h2>
-
+                            <tfoot>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

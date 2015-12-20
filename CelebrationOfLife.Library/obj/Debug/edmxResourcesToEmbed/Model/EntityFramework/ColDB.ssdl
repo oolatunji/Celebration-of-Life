@@ -6,6 +6,7 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="CategoryGallery">
     <Key>
@@ -14,6 +15,7 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CategoryID" Type="int" Nullable="false" />
     <Property Name="Image" Type="varbinary(max)" Nullable="false" />
+    <Property Name="BriefDescription" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="CategoryText">
     <Key>

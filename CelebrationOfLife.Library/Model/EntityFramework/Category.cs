@@ -21,6 +21,7 @@ namespace CelebrationOfLife.Library.Model.EntityFramework
     
         public int ID { get; set; }
         public string Name { get; set; }
+        public string Type { get; set; }
     
         public virtual ICollection<CategoryGallery> CategoryGalleries { get; set; }
         public virtual CategoryText CategoryText { get; set; }

@@ -9,6 +9,12 @@ namespace CelebrationOfLife.Web.Controllers
     public class AdminController : Controller
     {
         // GET: Admin
+        public ActionResult Index()
+        {
+            ViewBag.Title = "SignIn";
+            return View();
+        }
+
         public ActionResult Dashboard()
         {
             ViewBag.Title = "Dashboard";
@@ -27,6 +33,12 @@ namespace CelebrationOfLife.Web.Controllers
             return View();
         }
 
+        public ActionResult ChangePassword()
+        {
+            ViewBag.Title = "Change Password";
+            return View();
+        }
+
         public ActionResult CreateContentCategory()
         {
             ViewBag.Title = "Create Web Content Category";
@@ -42,6 +54,18 @@ namespace CelebrationOfLife.Web.Controllers
         public ActionResult CreateWebContent()
         {
             ViewBag.Title = "Create Web Content";
+            return View();
+        }
+
+        public ActionResult PreviewWebContent()
+        {
+            ViewBag.Title = "Preview Web Content";
+            return View();
+        }
+
+        public ActionResult UpdateWebContent()
+        {
+            ViewBag.Title = "Update Web Content";
             return View();
         }
 

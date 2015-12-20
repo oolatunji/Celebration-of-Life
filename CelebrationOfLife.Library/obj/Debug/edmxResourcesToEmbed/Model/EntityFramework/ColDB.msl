@@ -4,37 +4,39 @@
     <EntitySetMapping Name="Categories">
       <EntityTypeMapping TypeName="ColDBModel.Category">
         <MappingFragment StoreEntitySet="Category">
-          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
           <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="CategoryGalleries">
       <EntityTypeMapping TypeName="ColDBModel.CategoryGallery">
         <MappingFragment StoreEntitySet="CategoryGallery">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="BriefDescription" ColumnName="BriefDescription" />
           <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="CategoryTexts">
       <EntityTypeMapping TypeName="ColDBModel.CategoryText">
         <MappingFragment StoreEntitySet="CategoryText">
-          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
           <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="ColDBModel.User">
         <MappingFragment StoreEntitySet="Users">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
-          <ScalarProperty Name="Othernames" ColumnName="Othernames" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Username" ColumnName="Username" />
           <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Othernames" ColumnName="Othernames" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

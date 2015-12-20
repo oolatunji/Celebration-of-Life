@@ -67,14 +67,14 @@ namespace CelebrationOfLife.Library.Data
             }
         }
 
-        public static Category RetrieveCategoryByID(long? userID)
+        public static Category RetrieveCategoryByID(long? id)
         {
             try
             {
                 using (var context = new ColDBEntities())
                 {
                     var categories = context.Categories
-                                            .Where(f => f.ID == userID);
+                                            .Where(f => f.ID == id);
 
                     return categories.FirstOrDefault();
                 }
@@ -100,6 +100,7 @@ namespace CelebrationOfLife.Library.Data
                 if (existingCategory != null)
                 {
                     existingCategory.Name = category.Name;
+                    existingCategory.Type = category.Type;
 
                     using (var context = new ColDBEntities())
                     {

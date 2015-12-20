@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\OLATUNJI\Documents\projects\KioskApp\CelebrationOfLife.Web\CelebrationOfLife.Library\Model\EntityFramework\ColDB.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\OLATUNJI\Documents\projects\Celebration-of-Life\CelebrationOfLife.Library\Model\EntityFramework\ColDB.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

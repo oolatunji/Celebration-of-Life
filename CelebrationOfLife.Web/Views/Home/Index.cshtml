@@ -1,24 +1,220 @@
-﻿<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Celebration of Life</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    @Styles.Render("~/Content/client")
+    @Scripts.Render("~/bundles/client")
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+        function initialize() {
+            var mapCanvas = document.getElementById('map');
+            var mapOptions = {
+                center: new google.maps.LatLng(5.4833, 7.0333),
+                zoom: 8,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            var map = new google.maps.Map(mapCanvas, mapOptions);
+
+            var marker = new google.maps.Marker({
+                position: mapOptions.center,
+                map: map,
+                title: 'marker'
+                //=====You can even customize the icons here
+            });
+
+            var infowindow = new google.maps.InfoWindow({
+                content: "<B>Burial State</B>"
+            });
+
+            google.maps.event.addListener(marker, 'click', function () {
+                infowindow.open(map, marker);
+            });
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+<body>
+    <div id="viewport">
+        <header>
+            <div class="main">
+                <div class="clearfix">
+                    <nav>
+                        <ul>
+                            <li><a href="#home" class="on">Home</a></li>
+                            <li><a href="#programme">Programme</a></li>
+                            <li><a href="#contact">Burial</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <div id="controllers">
+            <div id="magazine">
+
+                <div class="home">
+
+                    <h1 class="site-title">
+                        <a href="#home">
+                            Mrs MBANO
+                        </a>
+                        <span class="tagline">
+                            CELEBRATION OF LIFE
+                        </span>
+                    </h1>
+                </div>
+                <div class="page programme">
+                    <div class="inner">
+
+                    </div>
+                    <div class="shadow-left">
+
+                    </div>
+                </div>
+                <div class="page programme-1">
+                    <div class="inner">
+                        <div class="content">
+                            <div class="clearfix">
+                                <h2 style="font-weight:bold">Programme List</h2>
+                                <div class="divider"></div>
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <table id="categoryList" class="cell-border" cellspacing="0" width="100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Programme</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                        </div>
+                    </div>
+                    <div class="shadow-right">
+                    </div>
+
+                </div>
+
+                <div class="page programmedetail">
+                    <div class="inner">
+
+                    </div>
+                    <div class="shadow-left">
+
+                    </div>
+                </div>
+                <div class="page programmedetail-1">
+                    <div class="inner">
+                        <div class="content" style="overflow-y:visible;">
+                            <div class="row" style="margin-bottom:10px;">
+                                <div class="col-6" style="margin-top:5px;margin-bottom:5px;"><p id="category" style="font-family:Calibri;color:blue;font-size:14px;"></p></div>
+                                <div class="col-5" style="float:right">
+                                    <button type="button" class="btn btn-outline btn-primary" onclick="backToList()"><i class="fa fa-angle-double-left"></i> Back to List</button>
+                                    <button type="button" id="showGallery" class="btn btn-outline btn-primary" data-toggle="modal" data-target="#modalHeaderLightBlue"><i class="fa fa-video-camera"></i> Show Gallery</button>
+                                </div>
+                            </div>
+                            <div style="height:530px; overflow-y:auto">
+                                <div class="clearfix" id="content"></div>
+                                <div class="clearfix" id="image_placeholder" style="display:flex;flex-direction: row;flex-wrap: wrap;justify-content: center;align-items: center;"></div>
+                                <div class="divider"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shadow-right">
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="inner">
+
+                    </div>
+                    <div class="shadow-left">
+
+                    </div>
+                </div>
+
+                <div class="contact-1">
+                    <div class="inner">
+                        <div class="content">
+                            <h2>Burial</h2>
+                            <div class="clearfix">
+                                <div class="img-container">
+                                    <div id="map"></div>
+                                </div>
+                                <div class="clearfix top25">
+                                    <div class="col-7">
+                                        <div class="top20">
+                                            Umuche, Amaukwu-Obollo<br />
+                                            Isiala Mbano.<br>
+                                            Local Government Area,<br>
+                                            Imo State.
+                                        </div>
+                                        <div class="top25">
+                                            Date: 7th, January 2016<br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shadow-right">
+                    </div>
+                </div>
+
+                <div class="back">
+                    <h1 class="site-title">
+                        <a href="#home">
+                            John Doe
+                        </a>
+                        <span class="tagline">
+                            GRAPHIC &amp; WEB DESIGNER
+                        </span>
+                    </h1>
+                </div>
+
+            </div>
+        </div>
+
+        <footer>
+            <div class="main">
+                <div class="aligncenter">
+                    &copy; Copyright 2015
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div class="modal fade" id="modalHeaderLightBlue" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-header-light-red">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="categoryTitle"></h4>
+                </div>
+                <div class="flexslider-container modal-body text-center">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<div class="someclass">
+    <div class="loading">
+        Loading, please wait...
+    </div>
 </div>
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
-        a broad range of clients, including browsers and mobile devices. ASP.NET Web API
-        is an ideal platform for building RESTful applications on the .NET Framework.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301871">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301872">Learn more &raquo;</a></p>
-    </div>
-</div>
+</html>
