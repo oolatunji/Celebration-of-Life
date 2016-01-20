@@ -1,0 +1,70 @@
+﻿@Scripts.Render("~/bundles/createcontent")
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header panel-primary" style="color:navy">Web Content Management</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Add Web Content
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="col-lg-12">
+                        <select class="form-control" id="contentCategory" onchange="loadTypePanel(value);"></select>
+                    </div>
+                </div>
+                <div class="form-group" id="textCategory">
+                    <div class="col-lg-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Content for: <span id="categoryHeader"></span>
+                            </div>
+                            <div class="panel-body">
+                                <div id="txtEditor"></div>
+                            </div>
+                            <div class="panel-footer">
+                                <span id="categoryFooter"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" id="imageCategory">
+                    <div class="col-lg-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Images for: <span id="imageHeader"></span>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label">Select Images </label>
+                                    <div class="col-lg-5">
+                                        <p style="color:red;font-family:Calibri;font-weight:bold;">Note: Maximum image size allowed per upload is 500KB</p>
+                                        <input type="file" class="form-control" id="image_to_load">
+                                        <button type="button" style="margin-top:10px" class="btn btn-outline btn-info" onclick="loadImageFileAsURL()">Upload Image</button>
+                                    </div>
+                                </div>
+
+                                <div class="form-group" id="images">
+                                    <div class="col-lg-12" id="potential_images" style="display:flex;flex-direction: row;flex-wrap: wrap;justify-content: center;align-items: center;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <span id="imageFooter"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" id="buttons">
+                    <div class="col-lg-12">
+                        <button type="button" class="btn btn-outline btn-primary" id="publishBtn" onclick="publishContent()"><i class="fa fa-video-camera"></i> Publish Content</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

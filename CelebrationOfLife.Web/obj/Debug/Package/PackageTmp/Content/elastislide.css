@@ -1,0 +1,47 @@
+/* Elastislide Style */
+.es-carousel-wrapper{
+	position:relative;
+}
+.es-carousel{
+	overflow:hidden;
+}
+.es-carousel ul{
+	display:none;
+}
+.es-carousel ul li{
+	height:100%;
+	float:left;
+	display:block;
+}
+.es-carousel ul li a{
+	color:#3b3b3b;
+	margin-top:5px;
+}
+.es-carousel ul li a img{
+	display:block;
+	border:none;
+	max-height:100%;
+	max-width:100%;
+}
+.es-nav { position:absolute; right:0; top:8px}
+.es-nav span{
+	position:absolute;
+	top:0px;
+	right:28px;
+	background:transparent url(../images/elastic_slider_skin.png) no-repeat top left;
+	width:24px;
+	height:22px;
+	text-indent:-9000px;
+	cursor:pointer;
+	opacity:0.8;
+}
+.es-nav span.es-nav-next{
+	right:0;
+	left:auto;
+	background-position:top right;
+}
+.es-nav span:hover{
+	opacity:1.0;
+}
+
+.es-carousel ul { overflow:hidden; margin-bottom:0;}

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ColDBEntities-Web.config Connection String" description="ColDBEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Model.EntityFramework.ColDB.csdl|res://*/Model.EntityFramework.ColDB.ssdl|res://*/Model.EntityFramework.ColDB.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\sqlexpress;initial catalog=CelebrationOfLifeDB;user id=sa;password=root;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\OLATUNJI\\Documents\\projects\\Celebration-of-Life\\CelebrationOfLife\.Web\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ColDBEntities']/@connectionString" />
+  </parameter>
+</parameters>

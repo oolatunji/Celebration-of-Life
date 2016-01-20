@@ -257,6 +257,7 @@
     <Content Include="fonts\flexslider-icon.eot" />
     <Content Include="fonts\flexslider-icon.ttf" />
     <Content Include="fonts\flexslider-icon.woff" />
+    <None Include="Properties\PublishProfiles\COL.pubxml" />
     <None Include="Scripts\admin\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\admin\jquery-1.10.2.js" />
     <Content Include="Scripts\admin\jquery-1.10.2.min.js" />
